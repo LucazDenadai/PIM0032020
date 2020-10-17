@@ -50,6 +50,10 @@ a {
     font-size: 22px;
 }
 
+main {
+    min-height: 100vh;
+}
+
 .container {
     max-width: 1280px;
     margin: 0px auto;
@@ -281,6 +285,6 @@ input {
 
 @media (max-width: 500px) {
     .login {
-        margin-top: 20px;
+        margin-top: 75px;
     }
 }
