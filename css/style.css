@@ -53,6 +53,11 @@ a {
 .container {
     max-width: 1280px;
     margin: 0px auto;
+    background: #f6f6f6;
+    box-shadow: 20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
+    margin-top: 150px;
+    border-radius: 30px;
+    padding: 30px;
 }
 
 .login {
@@ -184,7 +189,7 @@ input {
 }
 
 .modinfo {
-    padding-top: 150px;
+    /* padding-top: 150px; */
 }
 
 .margentop {
@@ -268,6 +273,10 @@ input {
     background: #f6f6f6;
     box-shadow: inset 15px 15px 30px #cfcfcf7a, inset -15px -15px 30px #ffffff;
     margin-bottom: 30px;
+}
+
+.usuario {
+    max-width: 600px;
 }
 
 @media (max-width: 500px) {
