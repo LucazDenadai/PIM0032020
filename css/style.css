@@ -1,0 +1,277 @@
+.bdcolor {
+    background-color: var(--back);
+    width: auto;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.bv {
+    /* padding-left: 18px; */
+    margin-bottom: 20px;
+}
+
+.bv h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0px auto;
+}
+
+.login {
+    max-width: 350px;
+    margin-top: 100px;
+}
+
+.cancelar {
+    background-color: #c32c2c;
+    color: var(--back);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+.cancelar:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+.configtopbar {
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+.configtopbar a {
+    color: var(--back);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.configtopbar a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.configtopbar a:hover {
+    background-color: var(--back);
+    color: black
+}
+
+.configbottbar {
+    bottom: 0;
+    background-color: var(--back);
+    overflow: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.configbottbar a {
+    display: block;
+    flex: 1;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 26px 0px;
+    width: 33%;
+    background: linear-gradient(145deg, #dddddd, #ffffff);
+    box-shadow: 15px 15px 30px #cfcfcf, -15px -15px 30px #ffffff;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.configbottbar a:hover {
+    background: #f6f6f6;
+    box-shadow: inset 15px 15px 30px #cfcfcf, inset -15px -15px 30px #ffffff;
+}
+
+.configbottbar a.active {
+    color: var(--black);
+    font-weight: bolder;
+    border: 3px solid #333;
+}
+
+.email {
+    position: sticky;
+    text-align: left;
+    padding: 34px 19px;
+}
+
+input {
+    width: 100%;
+    padding: 16.5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.login-salvar {
+    background-color: #4CAF50;
+    color: var(--back);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-salvar:hover {
+    opacity: 0.8;
+}
+
+.main {
+    height: 1500px;
+    text-align: left;
+    padding: 120px 20px;
+    background-color: var(--back);
+}
+
+.modinfo {
+    padding-top: 150px;
+}
+
+.margentop {
+    overflow: hidden;
+    background-color: var(--back);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #f6f6f6;
+    box-shadow: 5px 5px 20px #cfcfcf, -15px -15px 30px #ffffff;
+}
+
+.nome {
+    position: fixed;
+    text-align: left;
+    padding: 14px 19px;
+}
+
+.sair {
+    background-color: var(--back);
+    z-index: 999;
+    position: fixed;
+    top: 21px;
+    right: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+span.rgt {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 80px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-collum {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--text);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 26.5px 30px;
+    text-decoration: none;
+    transition: 300ms;
+    text-align: center;
+    background: linear-gradient(145deg, #dddddd, #ffffff);
+    box-shadow: 10px 10px 20px #e7e7e7, -10px -10px 20px #ffffff;
+}
+
+.btn:hover {
+    background: #f6f6f6;
+    box-shadow: inset 10px 10px 20px #e7e7e7, inset -10px -10px 20px #ffffff;
+}
+
+.btn-danger {
+    border: none;
+    color: var(--danger);
+}
+
+input {
+    border: none;
+    background: #f6f6f6;
+    box-shadow: inset 15px 15px 30px #cfcfcf7a, inset -15px -15px 30px #ffffff;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 500px) {
+    .login {
+        margin-top: 20px;
+    }
+}

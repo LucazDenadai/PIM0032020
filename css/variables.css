@@ -1,0 +1,10 @@
+:root {
+    --primary: #333;
+    --primary-leve: #555;
+    --secondary: #d1d1d1;
+    --textd: #333;
+    --textl: #fff;
+    --back: #f6f6f6;
+    --max-section: 1440px;
+    --danger: #c32c2c;
+}
