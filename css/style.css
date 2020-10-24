@@ -87,76 +87,10 @@ main {
     padding: 16px;
 }
 
-.configtopbar {
-    top: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: relative;
-}
-
-.configtopbar a {
-    color: var(--back);
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
-
-.configtopbar a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.configtopbar a:hover {
-    background-color: var(--back);
-    color: black
-}
-
-.configbottbar {
-    bottom: 0;
-    background-color: var(--back);
-    overflow: auto;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.configbottbar a {
-    display: block;
-    flex: 1;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    font-size: 17px;
-    padding: 26px 0px;
-    width: 33%;
-    background: linear-gradient(145deg, #dddddd, #ffffff);
-    box-shadow: 15px 15px 30px #cfcfcf, -15px -15px 30px #ffffff;
-    margin: 10px;
-    border-radius: 15px;
-}
-
-.configbottbar a:hover {
-    background: #f6f6f6;
-    box-shadow: inset 15px 15px 30px #cfcfcf, inset -15px -15px 30px #ffffff;
-}
-
-.configbottbar a.active {
-    color: var(--black);
-    font-weight: bolder;
-    border: 3px solid #333;
-}
-
 .email {
     position: sticky;
     text-align: left;
-    padding: 34px 19px;
+    padding: 34px 19px 15px
 }
 
 input {
@@ -286,5 +220,215 @@ input {
 @media (max-width: 500px) {
     .login {
         margin-top: 75px;
+    }
+}
+
+.configbottbar {
+    background-color: var(--back);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.configbottbar a {
+    display: block;
+    flex: 1;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 26px 0px;
+    background: linear-gradient(145deg, #dddddd, #ffffff);
+    box-shadow: 15px 15px 30px #cfcfcf, -15px -15px 30px #ffffff;
+    margin: 10px;
+    border-radius: 15px;
+    max-width: 139px;
+}
+
+.configbottbar a:hover {
+    background: #f6f6f6;
+    box-shadow: inset 15px 15px 30px #cfcfcf, inset -15px -15px 30px #ffffff;
+}
+
+.configbottbar a.active {
+    color: var(--black);
+    font-weight: bolder;
+    border: 3px solid #333;
+}
+
+@media (min-width: 1024px) {
+    .configbottbar {
+        bottom: unset;
+        top: 0px;
+        left: 0px;
+        width: 100px;
+        flex-direction: column;
+        height: 100%;
+        background-color: transparent;
+    }
+    .configbottbar a {
+        width: 80px;
+        max-height: 80px;
+        padding-top: 34px;
+    }
+    .configbottbar a.active {
+        padding-top: 28px;
+    }
+    .container.list {
+        margin-left: 120px;
+        margin-right: 120px;
+        margin-bottom: 120px;
+    }
+}
+
+.container.list h3 {
+    margin-left: 25px;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.user-item {
+    border: 1px solid #d1d1d1;
+    margin: 25px;
+    padding: 15px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-info.name {
+    flex: 0.5;
+    padding-left: 15px;
+}
+
+.user-action {
+    border: 1px solid #d1d1d1;
+    padding: 15px;
+    border-radius: 15px;
+    margin-left: 10px;
+    transition: 300ms;
+}
+
+.user-action img {
+    max-width: 25px;
+}
+
+.user-action:hover {
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #eee;
+}
+
+@media (max-width: 1024px) {
+    .user-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .user-info {
+        margin: 15px;
+        padding: 0px !important;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .user-action {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999999999999999999;
+    padding: 0px !important;
+    margin: 0px !important;
+    transition: 300ms;
+    animation: .3s fade-in forwards;
+}
+
+.modal .backdrop {
+    background-color: #000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+
+.modal .modal-content {
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 175px);
+    width: 350px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.modal .modal-content .modal-title {
+    font-size: 22px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+
+.modal .modal-content .modal-body {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.modal .modal-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.modal .modal-footer .btn {
+    height: 53px;
+    margin: 0px;
+    box-shadow: none;
+    background: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid;
+}
+
+.modal .modal-footer .btn:nth-child(1) {
+    margin-right: 5px;
+}
+
+.modal .modal-footer .btn:nth-child(2) {
+    margin-left: 5px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        top: 10%;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
     }
 }

@@ -14,7 +14,7 @@
 
 <body class="bdcolor">
     <div class="configbottbar">
-        <a href="">+</a>
+        <a href="add_user.html">+</a>
         <a href="home.html" class="active"> Home </a>
         <a href="usuario.html">Perfil</a>
     </div>
@@ -28,8 +28,33 @@
 
     <main>
 
+        <div class="container list">
+            <h3>Lista de Usuários</h3>
+
+            <div class="user-item">
+                <div class="user-info name"> Gabriel Gonçalves Silva </div>
+                <div class="user-info"> gagsilva28@gmail.com </div>
+                <a href="edit_user.html" class="user-action"> <img src="img/edit.png" alt=""> </a>
+                <div href="#" class="user-action" onclick="modal.show('.modal')"> <img src="img/remove.png" alt=""> </div>
+            </div>
+        </div>
     </main>
 
+    <div class="modal hidden">
+        <div class="backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-title"> Remover Usuário </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja remover este usuário?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary login-salvar dismiss-modal" type="submit">Cancelar</button>
+                <button class="btn btn-danger dismiss-modal" type="submit">Remover</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modal.js"></script>
 
 </body>
 
