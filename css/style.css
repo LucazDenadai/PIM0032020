@@ -263,8 +263,8 @@ span.rgt {
 }
 
 .btn:hover {
-    background: #f6f6f6;
-    box-shadow: inset 10px 10px 20px #e7e7e7, inset -10px -10px 20px #ffffff;
+    background: #dadada;
+    /* box-shadow: inset 10px 10px 20px #e7e7e7, inset -10px -10px 20px #ffffff; */
 }
 
 .btn-danger {
