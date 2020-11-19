@@ -1,6 +1,6 @@
 const request = {}
 
-request.url = "http://localhost:3000/"
+request.url = "http://adspim-com-br.umbler.net/"
 
 request.post = function(path, callback, params = {}) {
 
@@ -16,9 +16,11 @@ request.post = function(path, callback, params = {}) {
             return resp.json()
         })
         .then(function(data) {
+            callback()
             console.log('Request succeeded with JSON response', data);
         })
         .catch(function(error) {
+            alert.error('Ocorreu um erro ao realizar a requisição')
             console.log('Request failed', error);
         });
 }

@@ -1,6 +1,6 @@
 const allow = {}
 
-allow.host = 'http://localhost/faculdadeUnip/PIM0032020'
+allow.host = 'http://localhost/unip/pim'
 
 allow.url = {
     start: allow.host + '/index.html',
