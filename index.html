@@ -22,9 +22,9 @@
             <p>Insira seus dados para fazer o login</p>
         </div>
 
-        <input type="text" placeholder="Login" name="uname" required>
-        <input type="password" placeholder="Senha" name="psw" required>
-        <a href="home.html" class=" btn btn-primary login-salvar"> Login</a>
+        <input id="usuario" type="text" placeholder="Usuário" name="usuario" required>
+        <input id="senha" type="password" placeholder="Senha" name="senha" required>
+        <button onClick="login.submit(this)" class=" btn btn-primary login-salvar"> Login</button>
 
         <div class="center-all">
             <a href="registrar.html"> <span class="rgt">Registrese aqui!!</span> </a>
@@ -32,7 +32,7 @@
 
     </div>
 
-    <script src="js/alert.js"></script>
+    <script src="js/helper.js"></script>
     <script src="js/request.js"></script>
     <script src="js/session.js"></script>
     <script src="js/login.js"></script>

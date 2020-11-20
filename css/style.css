@@ -310,6 +310,9 @@ input {
 .user-info.name {
     flex: 0.5;
     padding-left: 15px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-transform: capitalize;
 }
 
 .user-action {
@@ -460,6 +463,10 @@ input {
 
 .fadeDown {
     animation: .3s fadeDown forwards;
+}
+
+.loading img {
+    max-width: 30px;
 }
 
 @keyframes fadeDown {

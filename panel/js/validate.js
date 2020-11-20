@@ -1,20 +1,18 @@
 const allow = {}
 
-allow.host = 'http://localhost/unip/pim'
-
 allow.url = {
-    start: allow.host + '/index.html',
+    start: session.host + '/index.html',
     loginRequired: [
         '/panel'
     ]
 }
 
 allow.start = function() {
-    allow.getUser()
+    allow.validatetUser()
 }
 
-allow.getUser = function() {
-    user = session.get('user')
+allow.validatetUser = function() {
+    let user = session.get('user')
 
     if (!user) {
         window.location.href = allow.url.start
