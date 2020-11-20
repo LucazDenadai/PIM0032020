@@ -12,7 +12,11 @@ request.post = function(path, callback, params = {}) {
             return resp.json()
         })
         .then(function(data) {
-            callback(data)
+            if (!data.message) {
+                callback(data)
+            } else if (data.message) {
+                helper.alert.error(data.message)
+            }
         })
         .catch(function(error) {
             helper.alert.error('Ocorreu um erro ao realizar a requisição.')
@@ -29,7 +33,11 @@ request.get = function(path, callback, params = {}) {
             return resp.json()
         })
         .then(function(data) {
-            callback(data)
+            if (!data.message) {
+                callback(data)
+            } else if (data.message) {
+                helper.alert.error(data.message)
+            }
         })
         .catch(function(error) {
             helper.alert.error('Ocorreu um erro ao realizar a requisição.')
