@@ -60,10 +60,8 @@ users.addSubmit = function(btn) {
     helper.setLoading(btn)
     let cliente = users.cliente()
 
-    console.log(cliente)
-
     if (cliente.nome && cliente.cpfcnpj && cliente.cpfcnpj && cliente.datanascimento && cliente.email && cliente.telcli_01 && cliente.telcli_02) {
-        request.post('cliente', function(res) {
+        request.put('cliente', function(res) {
             console.log(res)
             setTimeout(function() {
                 window.location.href = session.host + 'panel/home.html'
@@ -83,11 +81,51 @@ users.addSubmit = function(btn) {
 
 users.editSubmit = function(btn) {
     helper.setLoading(btn)
+    let cliente = users.cliente()
+    cliente.id = helper.getUrlParam('userId')
+    console.log(cliente)
+
+    if (cliente.id && cliente.nome && cliente.cpfcnpj && cliente.cpfcnpj && cliente.datanascimento && cliente.email && cliente.telcli_01 && cliente.telcli_02) {
+        request.post('cliente', function(res) {
+            console.log(res)
+            setTimeout(function() {
+                // window.location.href = session.host + 'panel/home.html'
+                helper.removeLoading()
+            }, 1000)
+
+        }, cliente)
+
+        setTimeout(function() {
+            helper.removeLoading()
+        }, 300)
+    } else {
+        helper.removeLoading()
+        helper.alert.error('preencha todos campos obrigatórios')
+    }
 }
 
 users.profileSubmit = function(btn) {
     helper.setLoading(btn)
+    let usuario = document.querySelector('[name="usuario"]')
+    let senha = document.querySelector('.valid')
+    let id = session.get('user').id
 
+    if (usuario && senha) {
+        request.put('usuarios/' + id, function(res) {
+            console.log(res)
+            setTimeout(function() {
+                helper.removeLoading()
+                window.location.href = session.host + 'panel/home.html'
+            }, 1000)
+        }, {
+            usuario: usuario.value,
+            senha: senha.value,
+            tipoUsuario: 1,
+        })
+    } else {
+        helper.removeLoading()
+        helper.alert.error('preencha todos campos obrigatórios')
+    }
 }
 
 users.validatePass = function() {
@@ -155,7 +193,7 @@ users.cliente = function() {
         email: document.querySelector('[name="Email"]').value,
         telcli_01: document.querySelector('[name="TelCli_01"]').value,
         telcli_02: document.querySelector('[name="TelCli_02"]').value,
-        datanascimento: document.querySelector('[name="datanascimento"]').value,
+        datanascimento: document.querySelector('[name="DataNascimento"]').value,
         idendereco: "1",
         cpfcnpj: document.querySelector('[name="CpfCnpj"]').value,
         idUsuario: session.get('user').id.toString()
