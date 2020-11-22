@@ -18,12 +18,15 @@ modal.dismiss = function() {
     for (let i = 0; i < lenght; i++) {
         dismiss[i].addEventListener('click', function(e) {
             e.preventDefault()
-            let modal = this.parentElement.parentElement.parentElement
-            console.log(modal)
-            if (modal) {
-                modal.classList.add('hidden')
-            }
+            modal.hide(this)
         })
+    }
+}
+
+modal.hide = function(el) {
+    let modal = el.parentElement.parentElement.parentElement
+    if (modal) {
+        modal.classList.add('hidden')
     }
 }
 

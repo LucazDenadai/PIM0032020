@@ -14,8 +14,8 @@ panel.logout = function() {
 
 panel.setUser = function() {
     let user = session.get('user')
-    document.querySelector('.nome').innerHTML = user.nome
-    document.querySelector('.email').innerHTML = user.usuario
+    document.querySelector('.nome').innerHTML = user.usuario
+    document.querySelector('.email').innerHTML = 'Bem-vindo'
 }
 
 panel.start()

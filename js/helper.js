@@ -27,6 +27,12 @@ helper.alert.error = function(message) {
     helper.alert.remove()
 }
 
+helper.alert.default = function(message) {
+    let div = helper.alert.create(message)
+    document.querySelector('body').appendChild(div)
+    helper.alert.remove()
+}
+
 helper.alert.remove = function() {
     setTimeout(function() {
         document.querySelector('.alert').classList.add('fadeDown')
@@ -93,6 +99,24 @@ helper.multiEventListener = function(element, event, callback, type = "add") {
             );
         }
     }
+}
+
+helper.setFields = function(obj) {
+    console.log(obj)
+    for (let key in obj) {
+
+        let input = document.querySelector('[name=' + key + ']')
+        if (input) {
+            input.value = obj[key]
+        }
+    }
+}
+
+
+helper.getUrlParam = function(param) {
+    var url_string = window.location.href
+    var url = new URL(url_string);
+    return url.searchParams.get(param);
 }
 
 helper.start()

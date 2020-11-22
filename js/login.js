@@ -20,13 +20,26 @@ login.getUser = function(usuario, senha) {
         return false
     }
 
-    let user = {
-        nome: 'Gabriel Gonçalves',
-        usuario: usuario,
-        id: 1
-    }
+    request.post('login', function(res) {
+        if (!res.message) {
+            let user = {
+                usuario: res.Usuario,
+                id: res.IdUsuario
+            }
 
-    return user;
+            session.set('user', user)
+            setTimeout(function() {
+                window.location.href = session.host + 'panel/home.html'
+            }, 1000)
+        } else {
+            setTimeout(function() {
+                helper.removeLoading()
+            }, 300)
+        }
+    }, {
+        usuario: usuario,
+        senha: senha
+    })
 }
 
 login.submit = function(btn) {
@@ -34,13 +47,6 @@ login.submit = function(btn) {
     let usuario = document.getElementById('usuario').value
     let senha = document.getElementById('senha').value
     let user = login.getUser(usuario, senha)
-
-    if (user) {
-        session.set('user', user)
-        setTimeout(function() {
-            window.location.href = session.host + 'panel/home.html'
-        }, 1000)
-    }
 }
 
 login.start()

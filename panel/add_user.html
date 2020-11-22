@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animation.css">
 </head>
 
 <body class="bdcolor">
@@ -20,11 +20,11 @@
     </div>
 
     <div class="margentop">
-        <h3 class="nome">Gabriel Aguir Nunes</h3>
-        <p class="email">umemal@mail.com</p>
+        <h3 class="nome"></h3>
+        <p class="email"></p>
     </div>
 
-    <a href="index.html" class="sair">Sair</a>
+    <a href="../index.html" class="sair">Sair</a>
 
     <main>
 
@@ -32,17 +32,38 @@
 
             <div class="modinfo">
                 <div class="bv">
-                    <h3>Adicionar Usuário</h3>
+                    <h3>Adicionar Cliente</h3>
                 </div>
-                <input type="text" placeholder="Nome completo" name="uname" required>
-                <input type="mail" autocomplete="new-password" placeholder="E-mail" name="uname" required>
-                <input type="password" autocomplete="new-password" placeholder="Senha" name="psw" required>
-                <input type="password" placeholder="Confimar senha" name="psw" required>
-                <button class="btn btn-primary login-salvar" type="submit">ADICIONAR</button>
+
+                <input type="hidden" name="IdUsuario" required>
+
+                <input type="text" placeholder="Nome completo" name="NomCli" required>
+                <input type="mail" placeholder="E-mail" name="Email" required>
+
+                <input type="mail" class="cpf" placeholder="CPF" name="CpfCnpj" required>
+                <input type="text" class="telefone" placeholder="Telefone" name="TelCli_01" required>
+                <input type="text" class="celular" placeholder="Celular" name="TelCli_02" required>
+
+                <input type="text" class="data" placeholder="Data de nascimento" name="datanascimento" required>
+
+                <button onclick="users.addSubmit(this)" class="btn btn-primary login-salvar" type="submit">ADICIONAR</button>
             </div>
 
         </div>
     </main>
+
+
+    <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
+    <script src="js/mask.js"></script>
+
+    <script src="../js/session.js"></script>
+    <script src="../js/helper.js"></script>
+    <script src="../js/request.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/panel.js"></script>
+    <script src="js/users.js"></script>
+
 </body>
 
 </html>

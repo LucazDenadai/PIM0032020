@@ -23,17 +23,23 @@
                     <h3>Cadastre-se agora mesmo</h3>
                     <p>Preencha o formulário abaixo para fazer o cadastro</p>
                 </div>
-                <input type="text" placeholder="Nome completo" name="uname" required>
-                <input type="mail" autocomplete="new-password" placeholder="E-mail" name="uname" required>
-                <input type="password" autocomplete="new-password" placeholder="Senha" name="psw" required>
-                <input type="password" autocomplete="new-password" placeholder="Confimar senha" name="psw" required>
-                <a href=""><button class="btn btn-primary login-salvar"type="submit" >Fazer cadastro</button></a>
-                <a href="index.html"><button class="btn btn-danger" type="submit" >Cancelar</button></a>
+                <input type="text" placeholder="Usuário" name="usuario" required>
+
+                <input type="password" onkeyup='users.validatePass()' id="password" autocomplete="new-password" placeholder="Senha" name="psw">
+                <input type="password" onkeyup='users.validatePass()' id="confirm_password" placeholder="Confimar senha" name="psw">
+                <span id='message'></span>
+
+                <button onclick="users.addUsuario(this)" class="btn btn-primary login-salvar" type="submit">Fazer cadastro</button>
+                <a href="index.html"><button class="btn btn-danger" type="submit">Cancelar</button></a>
             </div>
         </div>
 
     </main>
 
+    <script src="js/helper.js"></script>
+    <script src="js/request.js"></script>
+    <script src="js/session.js"></script>
+    <script src="panel/js/users.js"></script>
 </body>
 
 </html>

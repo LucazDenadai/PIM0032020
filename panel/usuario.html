@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animation.css">
 </head>
 
 <body class="bdcolor">
@@ -20,11 +20,11 @@
     </div>
 
     <div class="margentop">
-        <h3 class="nome">Gabriel Aguir Nunes</h3>
-        <p class="email">umemal@mail.com</p>
+        <h3 class="nome"></h3>
+        <p class="email"></p>
     </div>
 
-    <a href="index.html" class="sair">Sair</a>
+    <a href="../index.html" class="sair">Sair</a>
 
     <main>
 
@@ -32,18 +32,32 @@
 
             <div class="modinfo">
                 <div class="bv">
-                    <h3>Edite os dados do seu perfil</h3>
-                    <p>Altere os dados que acha necessário e salve-os</p>
+                    <h3>Os dados editados aqui</h3>
+                    <p>serão utilizados para seu login</p>
                 </div>
-                <input type="text" placeholder="Nome completo" name="uname" required>
-                <input type="mail" autocomplete="new-password" placeholder="E-mail" name="uname" required>
-                <input type="password" autocomplete="new-password" placeholder="Senha" name="psw" required>
-                <input type="password" placeholder="Confimar senha" name="psw" required>
-                <button class="btn btn-primary login-salvar" type="submit">Salva</button>
+
+                <input type="hidden" name="id">
+
+                <input type="text" placeholder="Nome completo" name="usuario" required>
+                <input type="password" onkeyup='users.validatePass()' id="password" autocomplete="new-password" placeholder="Senha" name="psw" required>
+                <input type="password" onkeyup='users.validatePass()' id="confirm_password" placeholder="Confimar senha" name="psw" required>
+                <span id='message'></span>
+
+                <button class="btn btn-primary login-salvar" type="submit" onclick="users.profileSubmit(this)">Salvar</button>
             </div>
 
         </div>
     </main>
+
+
+    <script src="../js/session.js"></script>
+    <script src="../js/helper.js"></script>
+    <script src="../js/request.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/panel.js"></script>
+    <script src="js/users.js"></script>
+
 </body>
 
 </html>
