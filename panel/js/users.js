@@ -61,7 +61,7 @@ users.addSubmit = function(btn) {
     let cliente = users.cliente()
 
     if (cliente.nome && cliente.cpfcnpj && cliente.cpfcnpj && cliente.datanascimento && cliente.email && cliente.telcli_01 && cliente.telcli_02) {
-        request.put('cliente', function(res) {
+        request.post('cliente', function(res) {
             console.log(res)
             setTimeout(function() {
                 window.location.href = session.host + 'panel/home.html'
@@ -113,10 +113,21 @@ users.profileSubmit = function(btn) {
     if (usuario && senha) {
         request.put('usuarios/' + id, function(res) {
             console.log(res)
-            setTimeout(function() {
-                helper.removeLoading()
-                window.location.href = session.host + 'panel/home.html'
-            }, 1000)
+
+            request.get('usuarios/' + id, function(res) {
+                let user = {
+                    id: res[0].IdUsuario,
+                    usuario: res[0].Usuario
+                }
+
+                session.set('user', user)
+
+                setTimeout(function() {
+                    helper.removeLoading()
+                    window.location.href = session.host + 'panel/home.html'
+                }, 1000)
+            })
+
         }, {
             usuario: usuario.value,
             senha: senha.value,
